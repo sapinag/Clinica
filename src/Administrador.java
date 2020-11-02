@@ -10,16 +10,16 @@ public class Administrador {
 
     @Override
     public boolean equals(Object objeto) {
-        if (objeto instanceof Administrador) { //Objeto si es clase Administrador
-            //Casteamos objeto a Administrador
+        if (objeto instanceof Administrador) { 
+            
             Administrador otroAdmin = (Administrador)objeto;
-            //Comparamos si coinciden nombre y password
+            
             if (nombre.equals(otroAdmin.nombre) && password.equals(otroAdmin.password))
-                return true; //Coinciden ambos, los objetos representan al mismo Administrador
+                return true; 
             else
-                return false;//Nombre o contraseña no coinciden, son Administradores diferentes.
+                return false;
         }
-        else //Objeto a comparar no es de clase Administrador
+        else 
             return false;
     }
 
