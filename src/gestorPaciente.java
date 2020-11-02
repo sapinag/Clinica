@@ -16,7 +16,7 @@ public final class GestorPacientes {
         File archivo = new File("C:/csv/pacientes.csv");
 
         try {
-            //Si no existe archivo, intentamos crearlo
+    
             if (!archivo.exists()) {
                 File carpeta = archivo.getParentFile();
                 carpeta.mkdirs();
@@ -24,12 +24,11 @@ public final class GestorPacientes {
             }
 
             FileWriter escritor = new FileWriter(archivo);
-            //Cabecera para datos del CSV
+
             escritor.append("#ID;Nombre;Apellidos\n");
 
-            //Datos de los pacientes
             for (Paciente doc: pacientes)
-                escritor.append(doc.generaLineaCSV());//Insertamos linea CSV
+                escritor.append(doc.generaLineaCSV());
 
             escritor.close();
         } catch (IOException e) {
